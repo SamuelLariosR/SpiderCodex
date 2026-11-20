@@ -1,0 +1,28 @@
+/**
+ * variables.css
+ * Paleta de colores, tokens de diseño y variables globales
+ */
+:root {
+  --bg: #0a0a0d;
+  --bg2: #101015;
+  --ink: #d7d7dc;
+  --ink2: #a3a3ad;
+  --mute: #6f6f7a;
+  --rule: #25252d;
+  --link: #76a2ff;
+  
+  /* Colores de la araña y extremidades */
+  --leg: #ff3b2f;
+  --joint: #8dff3c;
+  --red: #ff3030;
+  
+  /* Colores de glitch y partículas */
+  --mag: #ff3df0;
+  --cyan: #2fe6ff;
+  --lime: #7dff4a;
+  --amber: #ffcc33;
+  --blue: #4d6bff;
+
+  /* Icono para enlaces externos en SVG inline */
+  --ext: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M5 1.5H1.5v9h9V7' fill='none' stroke='black' stroke-width='1.4'/%3E%3Cpath d='M7 1h4v4M11 1 5.5 6.5' fill='none' stroke='black' stroke-width='1.4'/%3E%3C/svg%3E");
+}

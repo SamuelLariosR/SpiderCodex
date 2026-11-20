@@ -1,0 +1,117 @@
+/**
+ * glitch.css
+ * Estilos interactivos de las palabras (anclajes), glitch cibernético y marcas DOM
+ */
+
+/* ---------- Palabras (puntos de apoyo) ---------- */
+.w {
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  transform-origin: 50% 58%;
+  transition:
+    transform 0.32s cubic-bezier(0.2, 0.9, 0.3, 1.35),
+    color 0.25s,
+    background-color 0.25s,
+    box-shadow 0.25s;
+}
+
+/* Solo las palabras con superposición se posicionan para optimizar capas */
+.w.scr,
+.w.mk {
+  position: relative;
+}
+
+/* Durante el cálculo espacial se ignora la transformación */
+.measuring .w {
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Palabra sujetada activamente por una pata */
+.w.held {
+  outline: 1px solid rgba(141, 255, 60, 0.55);
+  outline-offset: 1px;
+}
+
+/* ---------- Glitch Transitorio (Scramble) ---------- */
+.w.scr {
+  color: transparent !important;
+  text-shadow: none !important;
+}
+
+.w.scr::before {
+  content: attr(data-s);
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: pre;
+  color: var(--scol, #2fe6ff);
+  text-shadow:
+    2px 0 rgba(255, 61, 240, 0.85),
+    -2px 0 rgba(47, 230, 255, 0.85);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.mk-mono.scr::after {
+  opacity: 0;
+}
+
+/* ---------- Marcas Persistentes ---------- */
+.mk {
+  transform: rotate(var(--rot, 0deg)) scale(var(--sc, 1)) skewX(var(--sk, 0deg));
+  z-index: 2;
+}
+
+.mk-box {
+  color: #fff;
+  background: color-mix(in srgb, var(--c) 16%, transparent);
+  box-shadow:
+    0 0 0 1px var(--c),
+    0 0 14px -3px var(--c);
+}
+
+.mk-inv {
+  color: var(--fg);
+  background: var(--c);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.85);
+}
+
+.mk-rot {
+  color: var(--c);
+  background: rgba(10, 10, 13, 0.78);
+  box-shadow: 0 0 0 1px var(--c);
+  z-index: 3;
+}
+
+.mk-mono {
+  color: transparent;
+}
+
+.mk-mono::after {
+  content: attr(data-m);
+  position: absolute;
+  left: -0.04em;
+  top: 50%;
+  transform: translateY(-52%);
+  font: 400 1.34em/1 "Courier New", Courier, monospace;
+  color: var(--red);
+  white-space: pre;
+  text-shadow:
+    1px 0 rgba(47, 230, 255, 0.45),
+    -1px 0 rgba(255, 61, 240, 0.35);
+  pointer-events: none;
+}
+
+.mk-big {
+  color: var(--c);
+  background: rgba(10, 10, 13, 0.6);
+  text-shadow: 0 0 10px color-mix(in srgb, var(--c) 60%, transparent);
+  z-index: 4;
+}
+
+.mk-red {
+  color: var(--red);
+  text-shadow: 0 0 1px var(--red);
+}

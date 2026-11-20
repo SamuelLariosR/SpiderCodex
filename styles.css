@@ -1,0 +1,5 @@
+/**
+ * styles.css
+ * Redirección al nuevo sistema modular de estilos en /css/main.css
+ */
+@import "./css/main.css";

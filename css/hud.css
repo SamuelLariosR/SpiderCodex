@@ -1,0 +1,164 @@
+/**
+ * hud.css
+ * Panel HUD de telemetría, visor de paso (gait monitor) y botones interactivos
+ */
+.hud {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 30;
+  width: 244px;
+  padding: 12px 12px 11px;
+  background: rgba(10, 10, 13, 0.93);
+  border: 1px solid #2a2a33;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+  font: 11px/1.45 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  color: #b9b9c3;
+  letter-spacing: 0.02em;
+}
+
+.hud-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #f1f1f4;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.hud-title .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--joint);
+  box-shadow: 0 0 8px var(--joint);
+}
+
+.hud-title .ver {
+  color: var(--mute);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+
+.hud-min {
+  margin-left: auto;
+  width: 20px;
+  height: 18px;
+  padding: 0;
+  font: inherit;
+  line-height: 1;
+  color: #9a9aa5;
+  background: transparent;
+  border: 1px solid #30303a;
+  cursor: pointer;
+}
+
+.hud-min:hover {
+  color: var(--joint);
+  border-color: var(--joint);
+}
+
+.hud-body {
+  margin-top: 9px;
+}
+
+.hud.min .hud-body {
+  display: none;
+}
+
+.hud dl {
+  margin: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.hud dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.hud dt {
+  color: #7d7d88;
+}
+
+.hud dd {
+  margin: 0;
+  color: #eaeaf0;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Visor de marcha (I1..I4 / D1..D4) */
+.gait {
+  display: grid;
+  gap: 3px;
+  margin: 9px 0;
+  padding: 8px 0;
+  border-top: 1px solid #23232b;
+  border-bottom: 1px solid #23232b;
+}
+
+.gait .row {
+  display: grid;
+  grid-template-columns: 16px repeat(4, 1fr);
+  gap: 3px;
+  align-items: center;
+}
+
+.gait span {
+  color: #6f6f7a;
+}
+
+.gait i {
+  height: 8px;
+  background: #1b1b22;
+  border: 1px solid #2b2b34;
+  transition: background-color 0.06s, border-color 0.06s;
+}
+
+.gait i.on {
+  background: var(--joint);
+  border-color: var(--joint);
+  box-shadow: 0 0 6px rgba(141, 255, 60, 0.55);
+}
+
+.gait i.up {
+  background: var(--leg);
+  border-color: var(--leg);
+}
+
+.hud-hint {
+  color: #7d7d88;
+  margin: 0 0 9px;
+}
+
+.hud-btns {
+  display: flex;
+  gap: 5px;
+}
+
+.hud-btns button {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  color: #e9e9ef;
+  background: #16161c;
+  border: 1px solid #30303a;
+  padding: 6px 0;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+
+.hud-btns button:hover {
+  border-color: var(--joint);
+  color: var(--joint);
+}
+
+.hud-btns button[aria-pressed="false"] {
+  color: #7d7d88;
+}
+
+.hud button:focus-visible {
+  outline: 1px solid var(--cyan);
+  outline-offset: 1px;
+}

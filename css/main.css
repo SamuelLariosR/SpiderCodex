@@ -1,0 +1,10 @@
+/**
+ * main.css
+ * Hoja de estilos principal que ensambla todos los módulos CSS
+ */
+@import "./variables.css";
+@import "./base.css";
+@import "./article.css";
+@import "./glitch.css";
+@import "./canvas.css";
+@import "./hud.css";

@@ -1,0 +1,12 @@
+/**
+ * canvas.css
+ * Capa fija del canvas donde se renderiza la araña procedural y los hilos de seda
+ */
+#spider-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 20;
+}

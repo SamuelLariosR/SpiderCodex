@@ -1,0 +1,23 @@
+{
+  "name": "araneae-proc",
+  "version": "1.0.0",
+  "description": "Una araña procedural interactiva dibujada en canvas con cinemática inversa (IK), anclaje sobre texto del DOM y efectos de glitch.",
+  "main": "js/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 3000",
+    "serve": "npx serve .",
+    "test:syntax": "node -c js/config/constants.js js/utils/math.js js/core/wordManager.js js/core/input.js js/entities/leg.js js/entities/spider.js js/effects/silkSimulation.js js/effects/glitchEffects.js js/rendering/renderer.js js/ui/hud.js js/main.js"
+  },
+  "keywords": [
+    "canvas",
+    "inverse-kinematics",
+    "procedural-animation",
+    "spider",
+    "glitch",
+    "verlet-physics",
+    "dom-interaction"
+  ],
+  "author": "",
+  "license": "MIT"
+}

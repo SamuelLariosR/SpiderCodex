@@ -1,0 +1,50 @@
+/**
+ * base.css
+ * Resets globales, tipografía general y reglas básicas de interactividad
+ */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font: 15px/1.65 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(255, 61, 240, 0.35);
+  color: #fff;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover .w {
+  text-decoration: underline;
+}
+
+a.ext::after {
+  content: "";
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  margin-left: 0.28em;
+  vertical-align: 0.02em;
+  background: currentColor;
+  -webkit-mask: var(--ext) center / contain no-repeat;
+  mask: var(--ext) center / contain no-repeat;
+  opacity: 0.8;
+}
+
+.lk {
+  color: var(--link);
+}
