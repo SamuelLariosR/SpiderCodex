@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="100%" height="auto">
+  <defs>
+    <linearGradient id="ikBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a10"/>
+      <stop offset="100%" stop-color="#050508"/>
+    </linearGradient>
+    <filter id="ikGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="900" height="420" rx="10" fill="url(#ikBg)" stroke="#232332" stroke-width="2"/>
+
+  <!-- Title -->
+  <text x="450" y="40" fill="#ffffff" font-family="'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle">
+    PSEUDO-3D INVERSE KINEMATICS (IK) MODEL
+  </text>
+  <text x="450" y="65" fill="#7d7d88" font-family="ui-monospace, monospace" font-size="12" text-anchor="middle">
+    Leg Triangulation: Hip (h0) → Knee (K) → Ankle (A) → Foot on document (P)
+  </text>
+
+  <!-- IK Leg Diagram -->
+  <g transform="translate(140, 240)">
+    <!-- Ground / Document Line -->
+    <line x1="-40" y1="90" x2="680" y2="90" stroke="#252535" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="640" y="112" fill="#6f6f7a" font-family="ui-monospace, monospace" font-size="11">Ground / Text</text>
+
+    <!-- Shadow -->
+    <polyline points="0,90 140,110 320,110 480,90" fill="none" stroke="rgba(0,0,0,0.5)" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Leg Segments -->
+    <!-- Femur (L1) -->
+    <line x1="0" y1="0" x2="160" y2="-120" stroke="#ff3b2f" stroke-width="5" stroke-linecap="round"/>
+    <text x="70" y="-75" fill="#ff3b2f" font-family="ui-monospace, monospace" font-size="13" font-weight="bold">Femur (l1 = 52)</text>
+
+    <!-- Tibia (L2) -->
+    <line x1="160" y1="-120" x2="360" y2="20" stroke="#ff3b2f" stroke-width="4" stroke-linecap="round"/>
+    <text x="270" y="-60" fill="#ff3b2f" font-family="ui-monospace, monospace" font-size="13" font-weight="bold">Tibia (l2 = 56)</text>
+
+    <!-- Tarsus (L3) -->
+    <line x1="360" y1="20" x2="480" y2="90" stroke="#ff3b2f" stroke-width="3" stroke-linecap="round"/>
+    <text x="440" y="45" fill="#ff3b2f" font-family="ui-monospace, monospace" font-size="13" font-weight="bold">Tarsus (l3 = 18)</text>
+
+    <!-- Joints -->
+    <!-- Hip -->
+    <circle cx="0" cy="0" r="7" fill="#8dff3c" filter="url(#ikGlow)"/>
+    <text x="-15" y="-14" fill="#ffffff" font-family="ui-monospace, monospace" font-size="12" font-weight="bold" text-anchor="end">Hip (Hx, Hy, h0)</text>
+
+    <!-- Knee -->
+    <circle cx="160" cy="-120" r="7" fill="#8dff3c" filter="url(#ikGlow)"/>
+    <text x="160" y="-138" fill="#8dff3c" font-family="ui-monospace, monospace" font-size="12" font-weight="bold" text-anchor="middle">Knee (Kx, Ky, zK)</text>
+
+    <!-- Ankle -->
+    <circle cx="360" cy="20" r="6" fill="#8dff3c" filter="url(#ikGlow)"/>
+    <text x="380" y="15" fill="#8dff3c" font-family="ui-monospace, monospace" font-size="12" font-weight="bold">Ankle (Ax, Ay)</text>
+
+    <!-- Foot / Word Anchor -->
+    <circle cx="480" cy="90" r="8" fill="#2fe6ff" filter="url(#ikGlow)"/>
+    <text x="480" y="120" fill="#2fe6ff" font-family="ui-monospace, monospace" font-size="12" font-weight="bold" text-anchor="middle">Foot / Word Anchor</text>
+
+    <!-- Lift Vector -->
+    <path d="M 480,90 Q 480,40 480,30" stroke="#ff3df0" stroke-width="2" stroke-dasharray="3 3" fill="none"/>
+    <text x="495" y="60" fill="#ff3df0" font-family="ui-monospace, monospace" font-size="10">zF (Lift)</text>
+  </g>
+
+  <!-- Math Formulas Card -->
+  <g transform="translate(620, 110)">
+    <rect width="240" height="230" rx="6" fill="#12121b" stroke="#2c2c3d"/>
+    <text x="16" y="28" fill="#8dff3c" font-family="ui-monospace, monospace" font-size="12" font-weight="bold">MATHEMATICAL FORMULAS</text>
+    <text x="16" y="55" fill="#a3a3ad" font-family="ui-monospace, monospace" font-size="11">• Law of Cosines for Knee</text>
+    <text x="16" y="75" fill="#ffffff" font-family="ui-monospace, monospace" font-size="10">cosA = (k1² + D² - k2²) / (2k1D)</text>
+    
+    <text x="16" y="110" fill="#a3a3ad" font-family="ui-monospace, monospace" font-size="11">• Vertical Knee Angle</text>
+    <text x="16" y="130" fill="#ffffff" font-family="ui-monospace, monospace" font-size="10">ang = atan2(vz, vu) + acos(cosA)</text>
+    
+    <text x="16" y="165" fill="#a3a3ad" font-family="ui-monospace, monospace" font-size="11">• Zenithal Projection (LAT)</text>
+    <text x="16" y="185" fill="#ffffff" font-family="ui-monospace, monospace" font-size="10">kx = hx + ux·uK + nx·zK·LAT</text>
+    <text x="16" y="205" fill="#ffffff" font-family="ui-monospace, monospace" font-size="10">ky = hy + uy·uK + ny·zK·LAT</text>
+  </g>
+</svg>

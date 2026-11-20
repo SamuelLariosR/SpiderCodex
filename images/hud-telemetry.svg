@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="auto">
+  <defs>
+    <filter id="hudGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="600" height="380" rx="10" fill="#09090d" stroke="#252530" stroke-width="2"/>
+
+  <!-- Title -->
+  <text x="300" y="36" fill="#ffffff" font-family="'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle">
+    HUD PANEL &amp; GAIT MONITOR (GAIT INDICATOR)
+  </text>
+  <text x="300" y="58" fill="#7d7d88" font-family="ui-monospace, monospace" font-size="11" text-anchor="middle">
+    Real-time telemetry and 8-leg stance/swing state visualizer
+  </text>
+
+  <!-- Floating HUD Panel -->
+  <g transform="translate(160, 85)">
+    <rect width="280" height="260" rx="4" fill="rgba(10, 10, 13, 0.95)" stroke="#2a2a33" stroke-width="1.5" filter="url(#hudGlow)"/>
+
+    <!-- HUD Header -->
+    <circle cx="20" cy="24" r="4" fill="#8dff3c" filter="url(#hudGlow)"/>
+    <text x="32" y="28" fill="#f1f1f4" font-family="ui-monospace, monospace" font-size="12" font-weight="600" letter-spacing="1">ARANEAE.PROC</text>
+    <text x="175" y="28" fill="#6f6f7a" font-family="ui-monospace, monospace" font-size="10">v1.0</text>
+    <rect x="242" y="14" width="22" height="20" fill="none" stroke="#30303a" rx="2"/>
+    <text x="253" y="28" fill="#9a9aa5" font-family="ui-monospace, monospace" font-size="12" text-anchor="middle">–</text>
+
+    <!-- Telemetry Rows -->
+    <g transform="translate(20, 56)" font-family="ui-monospace, monospace" font-size="11">
+      <text x="0" y="0" fill="#7d7d88">mode</text>
+      <text x="240" y="0" fill="#eaeaf0" text-anchor="end">following mouse</text>
+
+      <text x="0" y="20" fill="#7d7d88">anchored legs</text>
+      <text x="240" y="20" fill="#eaeaf0" text-anchor="end">8/8</text>
+
+      <text x="0" y="40" fill="#7d7d88">steps</text>
+      <text x="240" y="40" fill="#eaeaf0" text-anchor="end">1,482</text>
+
+      <text x="0" y="60" fill="#7d7d88">words touched</text>
+      <text x="240" y="60" fill="#eaeaf0" text-anchor="end">314</text>
+
+      <text x="0" y="80" fill="#7d7d88">silk threads</text>
+      <text x="240" y="80" fill="#eaeaf0" text-anchor="end">48</text>
+    </g>
+
+    <!-- Separator & Gait Visualizer -->
+    <line x1="20" y1="150" x2="260" y2="150" stroke="#23232b"/>
+    
+    <!-- Row L (Left) -->
+    <g transform="translate(20, 162)">
+      <text x="0" y="10" fill="#6f6f7a" font-family="ui-monospace, monospace" font-size="10">L</text>
+      <rect x="25" y="2" width="46" height="10" rx="1" fill="#8dff3c" stroke="#8dff3c" filter="url(#hudGlow)"/>
+      <rect x="78" y="2" width="46" height="10" rx="1" fill="#ff3b2f" stroke="#ff3b2f"/>
+      <rect x="131" y="2" width="46" height="10" rx="1" fill="#8dff3c" stroke="#8dff3c" filter="url(#hudGlow)"/>
+      <rect x="184" y="2" width="46" height="10" rx="1" fill="#ff3b2f" stroke="#ff3b2f"/>
+    </g>
+
+    <!-- Row R (Right) -->
+    <g transform="translate(20, 180)">
+      <text x="0" y="10" fill="#6f6f7a" font-family="ui-monospace, monospace" font-size="10">R</text>
+      <rect x="25" y="2" width="46" height="10" rx="1" fill="#ff3b2f" stroke="#ff3b2f"/>
+      <rect x="78" y="2" width="46" height="10" rx="1" fill="#8dff3c" stroke="#8dff3c" filter="url(#hudGlow)"/>
+      <rect x="131" y="2" width="46" height="10" rx="1" fill="#ff3b2f" stroke="#ff3b2f"/>
+      <rect x="184" y="2" width="46" height="10" rx="1" fill="#8dff3c" stroke="#8dff3c" filter="url(#hudGlow)"/>
+    </g>
+
+    <line x1="20" y1="200" x2="260" y2="200" stroke="#23232b"/>
+
+    <!-- Buttons -->
+    <g transform="translate(20, 215)">
+      <rect x="0" y="0" width="75" height="26" rx="2" fill="#16161c" stroke="#30303a"/>
+      <text x="37" y="17" fill="#e9e9ef" font-family="ui-monospace, monospace" font-size="11" text-anchor="middle">Clear</text>
+
+      <rect x="82" y="0" width="75" height="26" rx="2" fill="#16161c" stroke="#30303a"/>
+      <text x="119" y="17" fill="#8dff3c" font-family="ui-monospace, monospace" font-size="11" text-anchor="middle">Silk: on</text>
+
+      <rect x="165" y="0" width="75" height="26" rx="2" fill="#16161c" stroke="#30303a"/>
+      <text x="202" y="17" fill="#e9e9ef" font-family="ui-monospace, monospace" font-size="11" text-anchor="middle">Size: M</text>
+    </g>
+  </g>
+</svg>

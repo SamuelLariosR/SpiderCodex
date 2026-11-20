@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 580" width="100%" height="auto">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14141e"/>
+      <stop offset="100%" stop-color="#0c0c14"/>
+    </linearGradient>
+    <filter id="archGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="580" rx="10" fill="#08080c" stroke="#23232f" stroke-width="2"/>
+
+  <!-- Title -->
+  <text x="500" y="44" fill="#ffffff" font-family="'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" letter-spacing="0.5">
+    MODULAR SOFTWARE ARCHITECTURE (ES6)
+  </text>
+  <text x="500" y="70" fill="#7d7d88" font-family="ui-monospace, monospace" font-size="12" text-anchor="middle">
+    Control Flow, Physics Model, Inverse Kinematics, and Canvas Rendering
+  </text>
+
+  <!-- 1. Input & DOM Layer -->
+  <g transform="translate(60, 110)">
+    <rect width="260" height="180" rx="8" fill="url(#cardBg)" stroke="#4d6bff" stroke-width="1.6"/>
+    <rect width="260" height="30" rx="8" fill="#1b1d30"/>
+    <circle cx="16" cy="15" r="4.5" fill="#4d6bff"/>
+    <text x="30" y="19" fill="#ffffff" font-family="ui-monospace, monospace" font-size="12" font-weight="bold">1. INPUT &amp; DOM LAYER</text>
+    
+    <text x="16" y="55" fill="#2fe6ff" font-family="ui-monospace, monospace" font-size="11" font-weight="bold">wordManager.js</text>
+    <text x="16" y="72" fill="#a3a3ad" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">• TreeWalker &amp; wrapWords</text>
+    <text x="16" y="88" fill="#a3a3ad" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">• Spatial Grid (CELL=72px)</text>
+    <text x="16" y="104" fill="#a3a3ad" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">• Word Anchors &amp; Hold State</text>
+
+    <text x="16" y="132" fill="#2fe6ff" font-family="ui-monospace, monospace" font-size="11" font-weight="bold">input.js</text>
+    <text x="16" y="149" fill="#a3a3ad" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">• Pointer &amp; Touch tracking</text>
+    <text x="16" y="165" fill="#a3a3ad" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">• Viewport edge auto-scrolling</text>
+  </g>
+
+  <!-- 2. Kinematics & Entity Layer -->
+  <g transform="translate(370, 110)">
+    <rect width="260" height="180" rx="8" fill="url(#cardBg)" stroke="#ff3b2f" stroke-width="1.6"/>
+    <rect width="260" height="30" rx="8" fill="#30161a"/>
+    <circle cx="16" cy="15" r="4.5" fill="#ff3b2f"/>
+    <text x="30" y="19" fill="#ffffff" font-family="ui-monospace, monospace" font-size="12" font-weight="bold">2. KINEMATICS &amp; GAIT</text>
+
+    <text x="16" y="55" fill="#ff3b2f" font-family="ui-monospace, monospace" font-size="11" font-weight="bold">spider.js</text>
+    <text x="16" y="72" fill="#a3a3ad" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">• Alternating tetrapod gait</text>
+    <text x="16" y="88" fill="#a3a3ad" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">• Autonomous wander / Chasing</text>
+    <text x="16" y="104" fill="#a3a3ad" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">• Dynamic sway &amp; body bobbing</text>
+
+    <text x="16" y="132" fill="#ff3b2f" font-family="ui-monospace, monospace" font-size="11" font-weight="bold">leg.js (3D IK)</text>
+    <text x="16" y="149" fill="#a3a3ad" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">• 8-leg trigonometry resolution</text>
+    <text x="16" y="165" fill="#a3a3ad" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">• Zenithal projection &amp; Shadows</text>
+  </g>
+
+  <!-- 3. Effects & Simulation Layer -->
+  <g transform="translate(680, 110)">
+    <rect width="260" height="180" rx="8" fill="url(#cardBg)" stroke="#8dff3c" stroke-width="1.6"/>
+    <rect width="260" height="30" rx="8" fill="#1d2d14"/>
+    <circle cx="16" cy="15" r="4.5" fill="#8dff3c"/>
+    <text x="30" y="19" fill="#ffffff" font-family="ui-monospace, monospace" font-size="12" font-weight="bold">3. EFFECTS &amp; PHYSICS</text>
+
+    <text x="16" y="55" fill="#8dff3c" font-family="ui-monospace, monospace" font-size="11" font-weight="bold">silkSimulation.js</text>
+    <text x="16" y="72" fill="#a3a3ad" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">• Verlet particle physics (Silk)</text>
+    <text x="16" y="88" fill="#a3a3ad" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">• Elastic constraints &amp; Collisions</text>
+    <text x="16" y="104" fill="#a3a3ad" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">• Radial impacts &amp; Silk shots</text>
+
+    <text x="16" y="132" fill="#ff3df0" font-family="ui-monospace, monospace" font-size="11" font-weight="bold">glitchEffects.js</text>
+    <text x="16" y="149" fill="#a3a3ad" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">• Dynamic text scramble glitch</text>
+    <text x="16" y="165" fill="#a3a3ad" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">• Persistent DOM marks &amp; RGB</text>
+  </g>
+
+  <!-- Connectors -->
+  <g stroke="#7d7d88" stroke-width="1.8" fill="none" stroke-dasharray="4 3">
+    <path d="M 320,200 L 370,200"/>
+    <path d="M 630,200 L 680,200"/>
+  </g>
+
+  <!-- Core Orchestrator (main.js) -->
+  <g transform="translate(260, 330)">
+    <rect width="480" height="90" rx="8" fill="url(#cardBg)" stroke="#ffcc33" stroke-width="2"/>
+    <rect width="480" height="28" rx="8" fill="#302610"/>
+    <circle cx="16" cy="14" r="5" fill="#ffcc33"/>
+    <text x="32" y="18" fill="#ffffff" font-family="ui-monospace, monospace" font-size="12" font-weight="bold">APPLICATION CORE · main.js</text>
+    <text x="240" y="54" fill="#d7d7dc" font-family="'Helvetica Neue', Arial, sans-serif" font-size="12" text-anchor="middle">
+      Lifecycle Orchestrator · 60 FPS requestAnimationFrame Game Loop
+    </text>
+    <text x="240" y="72" fill="#ffcc33" font-family="ui-monospace, monospace" font-size="11" text-anchor="middle">
+      Delta-Time (dt) · Coordinated Viewport &amp; Document Scroll Space
+    </text>
+  </g>
+
+  <g stroke="#ffcc33" stroke-width="1.8" fill="none">
+    <path d="M 190,290 L 190,375 L 260,375"/>
+    <path d="M 500,290 L 500,330"/>
+    <path d="M 810,290 L 810,375 L 740,375"/>
+  </g>
+
+  <!-- Output Layer -->
+  <g transform="translate(100, 460)">
+    <rect width="360" height="85" rx="8" fill="url(#cardBg)" stroke="#2fe6ff" stroke-width="1.6"/>
+    <circle cx="16" cy="18" r="4.5" fill="#2fe6ff"/>
+    <text x="32" y="22" fill="#2fe6ff" font-family="ui-monospace, monospace" font-size="12" font-weight="bold">renderer.js (CANVAS 2D)</text>
+    <text x="16" y="46" fill="#a3a3ad" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">• Layered rendering (Doc space &amp; Viewport space)</text>
+    <text x="16" y="64" fill="#a3a3ad" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">• Bioluminescent glow, eyes, hourglass &amp; joints</text>
+  </g>
+
+  <g transform="translate(540, 460)">
+    <rect width="360" height="85" rx="8" fill="url(#cardBg)" stroke="#8dff3c" stroke-width="1.6"/>
+    <circle cx="16" cy="18" r="4.5" fill="#8dff3c"/>
+    <text x="32" y="22" fill="#8dff3c" font-family="ui-monospace, monospace" font-size="12" font-weight="bold">hud.js (TELEMETRY &amp; UI)</text>
+    <text x="16" y="46" fill="#a3a3ad" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">• Live gait monitor (Stance / Swing indicators)</text>
+    <text x="16" y="64" fill="#a3a3ad" font-family="'Helvetica Neue', Arial, sans-serif" font-size="11">• Interactive controls (S/M/L scale, silk, clear)</text>
+  </g>
+
+  <g stroke="#2fe6ff" stroke-width="1.8" fill="none">
+    <path d="M 380,420 L 380,440 L 280,440 L 280,460"/>
+  </g>
+  <g stroke="#8dff3c" stroke-width="1.8" fill="none">
+    <path d="M 620,420 L 620,440 L 720,440 L 720,460"/>
+  </g>
+</svg>
